@@ -39,7 +39,10 @@ module.exports = defineConfig({
   use: {
     browserName: "chromium",
     screenshot: "on",
-    headless: false,
+    // headless: false,
+
+    // Use headless mode in CI, otherwise use config value (false)
+    headless: !!process.env.CI || false,
 
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
