@@ -1,0 +1,105 @@
+//@version=4
+study("Supertrend", overlay = true, format=format.price, precision=2, resolution="")  
+// Sets the Pine Script version to 4, names the study "Supertrend," and configures it to overlay on the chart. It displays values as prices with two decimal places.
+
+Periods = input(title="ATR Period", type=input.integer, defval=10)  
+// User input for the period of the Average True Range (ATR), defaulting to 10.
+
+src = input(hl2, title="Source")  
+// Defines the source of the data as the average of high and low prices (hl2).
+
+Multiplier = input(title="ATR Multiplier", type=input.float, step=0.1, defval=3.0)  
+// User input for the ATR multiplier with a default value of 3.0. This adjusts the width of the Supertrend.
+
+changeATR = input(title="Change ATR Calculation Method ?", type=input.bool, defval=true)  
+// Allows users to toggle between different ATR calculation methods.
+
+showsignals = input(title="Show Buy/Sell Signals ?", type=input.bool, defval=true)  
+// Enables the option to display buy and sell signals on the chart.
+
+highlighting = input(title="Highlighter On/Off ?", type=input.bool, defval=true)  
+// Option to enable or disable highlighting of the trend background color.
+
+atr2 = sma(tr, Periods)  
+// Calculates the ATR using a simple moving average (SMA) over the specified period.
+
+atr = changeATR ? atr(Periods) : atr2  
+// Chooses the ATR calculation method based on the user’s selection.
+
+up = src - (Multiplier * atr)  
+// Calculates the upper trend line based on the source and ATR value.
+
+up1 = nz(up[1], up)  
+// Stores the previous value of the upper trend line to use in calculations (handling null values).
+
+up := close[1] > up1 ? max(up, up1) : up  
+// Adjusts the upper line based on the previous close price, making it non-decreasing in an uptrend.
+
+dn = src + (Multiplier * atr)  
+// Calculates the lower trend line.
+
+dn1 = nz(dn[1], dn)  
+// Stores the previous value of the lower trend line to use in calculations.
+
+dn := close[1] < dn1 ? min(dn, dn1) : dn  
+// Adjusts the lower line based on the previous close price, making it non-increasing in a downtrend.
+
+trend = 1  
+// Initializes the trend direction variable. 1 indicates an uptrend.
+
+trend := nz(trend[1], trend)  
+// Retrieves the previous trend value (with handling for null values).
+
+trend := trend == -1 and close > dn1 ? 1 : trend == 1 and close < up1 ? -1 : trend  
+// Updates the trend direction based on changes in the close price relative to the trend lines.
+
+upPlot = plot(trend == 1 ? up : na, title="Up Trend", style=plot.style_linebr, linewidth=2, color=color.green)  
+// Plots the upper trend line in green when the trend is up.
+
+buySignal = trend == 1 and trend[1] == -1  
+// Defines a buy signal when the trend changes from down to up.
+
+plotshape(buySignal ? up : na, title="UpTrend Begins", location=location.absolute, style=shape.circle, size=size.tiny, color=color.green, transp=0)  
+// Plots a small green circle on the chart to show the start of an uptrend.
+
+plotshape(buySignal and showsignals ? up : na, title="Buy", text="Buy", location=location.absolute, style=shape.labelup, size=size.tiny, color=color.green, textcolor=color.white, transp=0)  
+// Adds a "Buy" label where an uptrend starts if buy signals are enabled.
+
+dnPlot = plot(trend == 1 ? na : dn, title="Down Trend", style=plot.style_linebr, linewidth=2, color=color.red)  
+// Plots the lower trend line in red when the trend is down.
+
+sellSignal = trend == -1 and trend[1] == 1  
+// Defines a sell signal when the trend changes from up to down.
+
+plotshape(sellSignal ? dn : na, title="DownTrend Begins", location=location.absolute, style=shape.circle, size=size.tiny, color=color.red, transp=0)  
+// Plots a small red circle to indicate the start of a downtrend.
+
+plotshape(sellSignal and showsignals ? dn : na, title="Sell", text="Sell", location=location.absolute, style=shape.labeldown, size=size.tiny, color=color.red, textcolor=color.white, transp=0)  
+// Adds a "Sell" label where a downtrend starts if sell signals are enabled.
+
+mPlot = plot(ohlc4, title="", style=plot.style_circles, linewidth=0)  
+// Creates a plot of the average of open, high, low, and close prices, used to add highlight fills.
+
+longFillColor = highlighting ? (trend == 1 ? color.green : color.white) : color.white  
+// Sets the background color to green in uptrends, if highlighting is enabled.
+
+shortFillColor = highlighting ? (trend == -1 ? color.red : color.white) : color.white  
+// Sets the background color to red in downtrends, if highlighting is enabled.
+
+fill(mPlot, upPlot, title="UpTrend Highlighter", color=longFillColor)  
+// Fills the area between the uptrend line and the plot when the trend is up.
+
+fill(mPlot, dnPlot, title="DownTrend Highlighter", color=shortFillColor)  
+// Fills the area between the downtrend line and the plot when the trend is down.
+
+alertcondition(buySignal, title="SuperTrend Buy", message="SuperTrend Buy!")  
+// Sets up an alert condition for buy signals.
+
+alertcondition(sellSignal, title="SuperTrend Sell", message="SuperTrend Sell!")  
+// Sets up an alert condition for sell signals.
+
+changeCond = trend != trend[1]  
+// Detects if there’s a change in the trend direction.
+
+alertcondition(changeCond, title="SuperTrend Direction Change", message="SuperTrend has changed direction!")  
+// Sets up an alert condition for any change in the trend direction.

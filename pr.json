@@ -1,0 +1,250 @@
+[
+    {
+        "bill1": "2024-06-07",
+        "bill2": "2024-05-07",
+        "summary": [
+            {
+                "name": "amountDue",
+                "amt1": 136.4,
+                "amt2": 136.4,
+                "difference": 0.0
+            },
+            {
+                "name": "taxIncludedAmount",
+                "amt1": 136.4,
+                "amt2": 136.4,
+                "difference": 0.0
+            },
+            {
+                "name": "totalDonationAmount",
+                "amt1": 0.0,
+                "amt2": 0.0,
+                "difference": 0.0
+            },
+            {
+                "name": "totalTaxAmount",
+                "amt1": 6.49,
+                "amt2": 6.49,
+                "difference": 0.0
+            },
+            {
+                "name": "totalSavingsAmount",
+                "amt1": 0.0,
+                "amt2": 0.0,
+                "difference": 0.0
+            }
+        ],
+        "services": [
+            {
+                "name": "High Speed Internet 7804703672",
+                "sourceId": "65770111",
+                "amt1": 43.5,
+                "amt2": 43.5,
+                "difference": 0.0,
+                "chargeItem": [
+                    {
+                        "chargeItem": "TELUS Internet (included data : 300 GB)",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 80.0,
+                        "amt2": 80.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Unlimited Internet Usage",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 20.0,
+                        "amt2": 20.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Internet Mobile & Home Discount - effective Aug 05, 2023 to Aug 04, 2025",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": -10.0,
+                        "amt2": -10.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "24 MO - Internet Loyalty Credit - $30 incl tax* - effective Aug 05, 2023 to Aug 04, 2025",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": -28.57,
+                        "amt2": -28.57,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Digital Box Service Agreement Rental Discount",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": -5.0,
+                        "amt2": -5.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Service agreement - 1 Year",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 0.0,
+                        "amt2": 0.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Basic Modem Rental ($5 value)",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 5.0,
+                        "amt2": 5.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "24 MO - Unlimited Internet Usage Discount",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": -20.0,
+                        "amt2": -20.0,
+                        "difference": 0.0
+                    }
+                ]
+            },
+            {
+                "name": "TELUS TV 20034021581",
+                "sourceId": "65770119",
+                "amt1": 92.9,
+                "amt2": 92.9,
+                "difference": 0.0,
+                "chargeItem": [
+                    {
+                        "chargeItem": "Digital Box Service Agreement Rental Discount",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": -20.0,
+                        "amt2": -10.0,
+                        "difference": -10.0
+                    },
+                    {
+                        "chargeItem": "Prime Time",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 0.0,
+                        "amt2": 0.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Netflix Standard Plan",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 0.0,
+                        "amt2": 0.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Laughs & Cheers",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 0.0,
+                        "amt2": 0.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Blockbusters",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 0.0,
+                        "amt2": 0.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Lifestyle & Beyond",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 0.0,
+                        "amt2": 0.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Hollywood Suite",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 0.0,
+                        "amt2": 0.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Super Channel Pack",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 0.0,
+                        "amt2": 0.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Medley",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 0.0,
+                        "amt2": 0.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "7 Theme Packs & 1 Premium combo",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 98.0,
+                        "amt2": 98.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Digital Box Service Agreement Rental Discount",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": -10.0,
+                        "amt2": -10.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Essentials",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 0.0,
+                        "amt2": 0.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "7 theme pack",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 0.0,
+                        "amt2": 0.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "24 MO - Optik TV Loyalty Credit - $10 incl tax* - effective Aug 05, 2023 to Aug 04, 2025",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": -9.52,
+                        "amt2": -9.52,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "Optik TV 4K PVR Rental",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 20.0,
+                        "amt2": 20.0,
+                        "difference": 0.0
+                    },
+                    {
+                        "chargeItem": "OPTIK TV 4K WIRELESS BOX Rental",
+                        "chargeType": "RC",
+                        "sectType": "MR",
+                        "amt1": 10.0,
+                        "amt2": 10.0,
+                        "difference": 0.0
+                    }
+                ]
+            }
+        ]
+    }
+]

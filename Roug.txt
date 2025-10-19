@@ -1,0 +1,16 @@
+Use Intellij Idea
+Connect Github
+Prepare a Java selenium project with latest version 4.25 which uses
+-Maven
+-TestNG
+-log4j
+Use comments in test script to explain every line of code
+Explain folder structure in details
+
+Create a simple login test for a demo website
+I need ready to use project not wants to modify any data, locator etc
+ExtentReport(embed screenshot into the report after every step)
+
+Setup Jenkins with github
+Launch project using Jenkins (Explain setup step by step)
+

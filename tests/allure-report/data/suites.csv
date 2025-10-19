@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","3542","only keyword Page Playwright Tests","","Thu Mar 06 21:10:51 IST 2025","passed","Thu Mar 06 21:10:55 IST 2025","","UIBasics.spec.ts","",""
+"","7351","Buy product into application","","Thu Mar 06 21:10:51 IST 2025","passed","Thu Mar 06 21:10:58 IST 2025","","Assignment.spec.ts","",""
+"","3251","Visual Testing","","Thu Mar 06 21:10:51 IST 2025","failed","Thu Mar 06 21:10:54 IST 2025","","MoreValidation.spec.js","",""
+"","3953","Detailed Login Process Screening","","Sun Dec 15 16:10:04 IST 2024","failed","Sun Dec 15 16:10:08 IST 2024","","DemoLoginTest.spec.js","",""
