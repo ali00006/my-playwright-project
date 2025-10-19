@@ -51,10 +51,9 @@ test("Detailed Login Process Screening", async ({ page }, testInfo) => {
 
   // Wait for navigation or dashboard load
   await page.waitForURL(
-    "https://rahulshettyacademy.com/client/dashboard/dash",
-    { timeout: 10000 }
+    "https://rahulshettyacademy.com/client/#/dashboard/dash"
   );
-
+  // https://rahulshettyacademy.com/client/#/dashboard/dash
   // Take full page screenshot after login
   await testInfo.attach("post-login-full-page", {
     body: await page.screenshot({ fullPage: true }),
