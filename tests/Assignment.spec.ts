@@ -79,7 +79,7 @@ test("child window handling", async ({ browser }) => {
 });
 
 //  Buy product
-test.only("Buy product into application", async ({ page }) => {
+test("Buy product into application", async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/client");
   const email = page.locator("#userEmail");
   await email.fill("hasanmonu116@gmail.com");
