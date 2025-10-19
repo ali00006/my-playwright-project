@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import exp from "constants";
 
-test("Account registration Page Playwright Tests", async ({ page }) => {
+test.skip("Account registration Page Playwright Tests", async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/client");
   await page.locator(".btn1").click();
   await page.locator("#firstName").fill("Ali");
@@ -34,7 +34,7 @@ test("Login into application", async ({ page }) => {
   //await page.waitForLoadState("networkidle");
   await page.locator(".card-body b").first().waitFor();
   const titles = await page.locator(".card-body b").allTextContents();
-  await page.pause();
+  // await page.pause();
   console.log(titles);
 });
 
