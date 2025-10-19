@@ -10,6 +10,11 @@ on:
         description: "Test file path (e.g., tests/Assignment.spec.ts or Assignment.spec.ts). Leave empty to run default."
         required: false
         default: ""
+      test_type:
+        description: "Type of test to run (e.g., smoke, regression, api, e2e)"
+        required: true
+        type: string
+        default: "smoke"
 jobs:
   test:
     timeout-minutes: 60
@@ -50,13 +55,25 @@ jobs:
       - name: Run Playwright tests
         run: |
           TEST_FILE="${{ github.event.inputs.test_file }}"
+          TEST_TYPE="${{ github.event.inputs.test_type }}"
+
+          echo "Test Type Selected: $TEST_TYPE"
+
           if [ -z "$TEST_FILE" ]; then
-            echo "No test file provided; running default: Assignment.spec.ts"
-            TEST_FILE="Assignment.spec.ts"
+            echo "No test file provided; looking for tests in $TEST_TYPE directory"
+            if [ -d "tests/$TEST_TYPE" ]; then
+              TEST_PATH="tests/$TEST_TYPE"
+            else
+              echo "Warning: $TEST_TYPE directory not found, using default: Assignment.spec.ts"
+              TEST_PATH="Assignment.spec.ts"
+            fi
           else
-            echo "Running tests for: $TEST_FILE"
+            TEST_PATH="$TEST_FILE"
+            echo "Using specified test file: $TEST_PATH"
           fi
-          npx playwright test "$TEST_FILE" --workers=10
+
+          echo "Executing Playwright tests..."
+          npx playwright test "$TEST_PATH" --workers=10
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
